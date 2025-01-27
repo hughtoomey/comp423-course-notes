@@ -98,6 +98,9 @@ Admonitions will be used to provide extra context for any steps within this tuto
 
     Once your dev container setup completes, close the current terminal tab (trash can), open a new terminal pane within VSCode, and try running go --version to see your dev container is running a recent version of Go without much effort!<br>
     Use `go version` in your terminal to confirm that you have a semi recent version of Go installed (go version go1.20.14 linux/amd64 as of Jan/26/2025)
+    !!! title="Why Go?"
+    Go is an open-source language developed by Google in 2007. It was designed to be simple and efficient. Go is used greatly in web-servers and cloud-services.
+    
 ## Part 3: Creating your own project
 1. Make a new directory called `hello`
 ```
@@ -118,6 +121,9 @@ func main() {
     fmt.Println("Hello COMP423")
 }
 ```
+!!! title="Why main?"
+While a ```main``` function is not required in Go but ```func main() {}``` is required for executables.
+
 4. Now its time to run your program! This can be done with two options:
         1. Run your program directly in your terminal
     ```
