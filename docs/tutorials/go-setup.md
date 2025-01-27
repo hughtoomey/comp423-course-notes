@@ -73,12 +73,14 @@ Admonitions will be used to provide extra context for any steps within this tuto
     {
     "name": "Go Dev Container",
     "image": "mcr.microsoft.com/devcontainers/go:1.20",
-    
-    "settings": {},
-
-    "extensions": [
-        "golang.go"
-    ],
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "golang.go"
+            ]
+        }
+    },
     "postCreateCommand": "go mod tidy"
     }
     ```
