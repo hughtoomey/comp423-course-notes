@@ -60,3 +60,32 @@ Admonitions will be used to provide extra context for any steps within this tuto
     git push --set-upstream origin main
     ```
     4. Back in your web browser, refresh your GitHub repository to see that the same commit you made locally has now been pushed to remote. You can use `git log` locally to see the commit ID and message which should match the ID of the most recent commit on GitHub. This is the result of pushing your changes to your remote repository.
+## Part 2: Setting Up the Development Environment
+1. Add Development Container Configuration
+    1. In VS Code, open the `go-project` directory. You can do this via: File > Open Folder.
+    2. Install the <b>Dev Containers</b> extension for VS Code.
+    3. Create a `.devcontainer` directory in the root of your project with the following file inside of this "hidden" configuration directory:
+    ```
+    .devcontainer/devcontainer.json
+    ```
+    Paste this content into your `devcontainer.json'
+    ```json
+    {
+    "name": "Go Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/go:1.20",
+    
+    "settings": {},
+
+    "extensions": [
+        "golang.go"
+    ],
+    "postCreateCommand": "go mod tidy"
+    }
+    ```
+    <b>Explanation</b>
+    - `name`: The label that appears in your VS Code Dev Container environment.
+    - `image`: Points directly to an existing Docker image—in this case, the official Go image on Docker Hub (golang:1.20).
+        - If you need a different version, you can change the tag (e.g., golang:1.19).
+    - `settings`: Custom VS Code settings inside the container (e.g., go.gopath, default shell).
+    - `extensions`: Lists extensions that will be installed automatically in the container. For Go development, golang.go is essential.
+    - `postCreateCommand`: Runs after the container is created. Here, go mod tidy cleans up any dependencies.
