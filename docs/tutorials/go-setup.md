@@ -1,7 +1,9 @@
 # Setting up a dev container for Go
 
 * Primary author: [Hugh Toomey](https://hughtoomey)
-* Reviewer: [Cem Baykal](https://baykalcem)
+* Reviewer: [Cem Baykal](https://baykalcem)<br>
+* note: some content from this tutorial is reused from an mkDocs tutorial available <a href="https://comp423-25s.github.io/resources/MkDocs/tutorial/">here</a>.
+
 
 ## Features in this tutorial
 * <b>Code Blocks</b> <br>
@@ -94,7 +96,8 @@ Admonitions will be used to provide extra context for any steps within this tuto
 2. Reopen the Project in a VSCode Dev Container<br><br>
         Reopen the project in the container by pressing `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac), typing "Dev Containers: Reopen in Container," and selecting the option. This may take a few minutes while the image is downloaded and the requirements are installed.<br>
 
-    Once your dev container setup completes, close the current terminal tab (trash can), open a new terminal pane within VSCode, and try running go --version to see your dev container is running a recent version of Go without much effort!
+    Once your dev container setup completes, close the current terminal tab (trash can), open a new terminal pane within VSCode, and try running go --version to see your dev container is running a recent version of Go without much effort!<br>
+    Use `go version` in your terminal to confirm that you have a semi recent version of Go installed (go version go1.20.14 linux/amd64 as of Jan/26/2025)
 ## Part 3: Creating your own project
 1. Make a new directory called `hello`
 ```
@@ -115,15 +118,19 @@ func main() {
     fmt.Println("Hello COMP423")
 }
 ```
-4. Now its time to run your program! This can be done with two options
-    - Run your program directly in your terminal
+4. Now its time to run your program! This can be done with two options:
+        1. Run your program directly in your terminal
     ```
     go run main.go
     ```
-    - Create an executable file using the build command. This command creates an file that can be run directly
+            * Compiles your Go code in memory and immediately executes it.
+            * No standalone binary is produced (the compiled program is temporary).
+        2. Create an executable file using the build command. This command creates an file that can be run directly
     ```
     go build main.go
     ./main
     ```
+            * Compiles your code into an executable file (e.g., `main` or `main.exe`)
+            * Does not automatically run the program; you run the binary separately afterward.
 ## Thats it!
 congratulations on completing your first go project!
