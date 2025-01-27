@@ -89,3 +89,7 @@ Admonitions will be used to provide extra context for any steps within this tuto
     - `settings`: Custom VS Code settings inside the container (e.g., go.gopath, default shell).
     - `extensions`: Lists extensions that will be installed automatically in the container. For Go development, golang.go is essential.
     - `postCreateCommand`: Runs after the container is created. Here, go mod tidy cleans up any dependencies.
+2. Reopen the Project in a VSCode Dev Container<br><br>
+        Reopen the project in the container by pressing `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac), typing "Dev Containers: Reopen in Container," and selecting the option. This may take a few minutes while the image is downloaded and the requirements are installed.<br>
+
+    Once your dev container setup completes, close the current terminal tab (trash can), open a new terminal pane within VSCode, and try running go --version to see your dev container is running a recent version of Go without much effort!
