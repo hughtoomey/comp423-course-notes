@@ -95,3 +95,35 @@ Admonitions will be used to provide extra context for any steps within this tuto
         Reopen the project in the container by pressing `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac), typing "Dev Containers: Reopen in Container," and selecting the option. This may take a few minutes while the image is downloaded and the requirements are installed.<br>
 
     Once your dev container setup completes, close the current terminal tab (trash can), open a new terminal pane within VSCode, and try running go --version to see your dev container is running a recent version of Go without much effort!
+## Part 3: Creating your own project
+1. Make a new directory called `hello`
+```
+mkdir hello
+cd hello
+```
+2. Initialize your go module
+```
+go init github.com/<your username>/hello
+```
+3. Add a new file in the hello directory called `main.go` and write in your first program
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello COMP423")
+}
+```
+4. Now its time to run your program! This can be done with two options
+    - Run your program directly in your terminal
+    ```
+    go run main.go
+    ```
+    - Create an executable file using the build command. This command creates an file that can be run directly
+    ```
+    go build main.go
+    ./main
+    ```
+## Thats it!
+congratulations on completing your first go project!
